@@ -1503,10 +1503,10 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@zeit/swr@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@zeit/swr/-/swr-0.0.2.tgz#8921db25eebce909bd9cdde38eb9dfb1aedd5327"
-  integrity sha512-mMMosouVsbl9D2fu7HBdAYrSbP3Hu117vuFrqu32dDaRkvKBGRnSWvuIGlokfsu0ao4EX/BlWPnxd9IQbban6g==
+"@zeit/swr@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@zeit/swr/-/swr-0.1.2.tgz#75301b899c9965c94668d25ec4c3d9f53fe0775a"
+  integrity sha512-FZgHpxiEf9bkPxs4kT7psmiXNXCd//fJIYqYcoSdDwBJ7q98U9XPrmbK6MJwYlFve9asR1DDzs/P3lJR+hdAyw==
   dependencies:
     deep-equal "1.1.0"
     lodash.throttle "4.1.1"
