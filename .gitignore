@@ -8,4 +8,7 @@ build
 
 # misc
 .DS_Store
+.env.development.local
+.env.production.local
+
 .vscode
