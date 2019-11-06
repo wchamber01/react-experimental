@@ -1,14 +1,30 @@
+/**
+ * See documentation on Strict Mode & SWRConfig below for more information:
+ *
+ * https://reactjs.org/docs/strict-mode.html
+ * https://github.com/zeit/swr
+ */
+
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
+import { SWRConfig } from 'swr';
 
 import App from './App';
+
+import fetch from './lib/fetch';
 import * as serviceWorker from './lib/serviceWorker';
 
 import './css/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <SWRConfig
+      value={{
+        fetcher: fetch
+      }}
+    >
+      <App />
+    </SWRConfig>
   </StrictMode>
 );
 
