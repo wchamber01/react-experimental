@@ -12,7 +12,7 @@ This documentation is aimed at early adopters and people who are curious. If you
 
 ---
 
-### Common data-fetching approaches in React
+### Common data-fetching approaches in [React](https://reactjs.org/)
 
 - **Fetch-on-render (for example, fetch in useEffect):** Start rendering components. Each of these components may trigger data fetching in their effects and lifecycle methods. This approach often leads to “waterfalls”.
 
