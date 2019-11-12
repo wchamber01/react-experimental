@@ -1,9 +1,10 @@
 /**
  * Upon investigating the waterfall, I believe this is not the render-as-you-fetch approach!
  *
- * We are also making another two passes to the API:
+ * We are also making another two passes to the API, hence the "waterfall effect":
  *
- * 1. Fetch the
+ * 1. Fetch Now Playing movies from API
+ * 2. Fetch poster images from API
  */
 
 import React from 'react';
