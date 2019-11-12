@@ -6,7 +6,7 @@
     "react": "^0.0.0-experimental-f6b8d31a7",
     "react-dom": "^0.0.0-experimental-f6b8d31a7",
     "react-scripts": "3.2.0",
-    "swr": "^0.1.8",
+    "swr": "^0.1.9",
     "unfetch": "^4.1.0"
   },
   "scripts": {
