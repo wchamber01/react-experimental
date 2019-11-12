@@ -4,7 +4,7 @@
  * We are also making another two passes to the API, hence the "waterfall effect":
  *
  * 1. Fetch Now Playing movies from API
- * 2. Fetch poster images from API
+ * 2. Fetch poster images from the data we recieved from step 1
  */
 
 import React from 'react';
