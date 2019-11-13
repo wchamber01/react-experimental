@@ -4,7 +4,8 @@
 }
 
 .poster {
-  border-radius: 4px;
-  height: 260px;
-  width: 150px;
+  border-radius: 1.2rem;
+  height: 26rem;
+  margin: 0 2rem 2rem 0rem;
+  width: 15rem;
 }
