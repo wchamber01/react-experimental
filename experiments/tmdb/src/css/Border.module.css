@@ -1,0 +1,4 @@
+.border {
+  border-bottom: 0.1rem solid #454545;
+  transform: scaleY(0.5);
+}
