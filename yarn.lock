@@ -9509,10 +9509,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swr@^0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-0.1.10.tgz#18b43e936cecda979e6fb0845d1c7da54b11b862"
-  integrity sha512-gzPHzZjNuNT7YglXRZjbqpDQNrJK0G1j6cQ+xdLnWnh/ecBckY2Jd6TcD6MtCAtM7eBWFT6S3vPLH1Q8VUD9qA==
+swr@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-0.1.12.tgz#00aebc430121446b3f63519137c0ca84c1e2a759"
+  integrity sha512-bYZWem/uMJluyYy64LXOWpUg7wiedRVsQBK2STBG6crjpiR/VA23/200nKvfAZtwrPA+E4oazMQCHXZ4LPbU3A==
   dependencies:
     fast-deep-equal "2.0.1"
 
