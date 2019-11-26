@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(95vh - 8rem);
+}
+
+.spinner {
+  color: #000;
+  height: 2.8rem;
+  position: absolute;
+  user-select: none;
+  width: 2.8rem;
+}
