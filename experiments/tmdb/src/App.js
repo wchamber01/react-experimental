@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import { Router } from '@reach/router';
 
 import Header from './components/Header';
 import NowPlaying from './components/movies/NowPlaying';
@@ -8,7 +9,9 @@ export default function App() {
     <>
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
-        <NowPlaying />
+        <Router>
+          <NowPlaying path="/" />
+        </Router>
       </Suspense>
     </>
   );
