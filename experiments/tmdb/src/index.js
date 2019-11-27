@@ -8,7 +8,6 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { SWRConfig } from 'swr';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './App';
 
@@ -24,9 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         fetcher: fetch
       }}
     >
-      <Router>
-        <App />
-      </Router>
+      <App />
     </SWRConfig>
   </StrictMode>
 );
