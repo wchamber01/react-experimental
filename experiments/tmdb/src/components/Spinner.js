@@ -1,3 +1,11 @@
+/**
+ * Reverse-engineered from Ionic Framework — a beautiful open
+ * source UI toolkit for building performant, high-quality mobile
+ * and deskptop apps using web technologies (HTML, CSS, and JavaScript).
+ *
+ * Source: https://ionicframework.com/docs/api/spinner.
+ */
+
 import React from 'react';
 
 import css from '../css/Spinner.module.css';
