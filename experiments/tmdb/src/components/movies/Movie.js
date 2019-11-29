@@ -21,6 +21,7 @@ export default function Movie(props) {
         alt={data.title}
       />
       <h2>{data.title}</h2>
+      <p>{data.overview}</p>
     </div>
   );
 }
