@@ -46,6 +46,10 @@ h2 {
   font-size: 2.4rem;
 }
 
+p {
+  color: var(--header-primary);
+}
+
 svg {
   animation: animation-fade-out 1s linear 0s infinite normal none running;
   position: absolute;
