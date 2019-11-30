@@ -3,8 +3,6 @@
 }
 
 .backdrop {
-  border-radius: 1.2rem;
-  box-shadow: var(--shadow);
   width: 100%;
   object-fit: contain;
 }
