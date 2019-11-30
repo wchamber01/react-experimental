@@ -5,6 +5,7 @@
 
 .poster {
   border-radius: 1.2rem;
+  box-shadow: var(--shadow);
   height: 26rem;
   margin: 0 2rem 2rem 0rem;
   width: 15rem;
