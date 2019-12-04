@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { Router } from '@reach/router';
 
-import Header from './components/Header';
 import Spinner from './components/Spinner';
 import NowPlaying from './components/movies/NowPlaying';
 import Movie from './components/movies/Movie';
