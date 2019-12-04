@@ -16,7 +16,7 @@ import * as serviceWorker from './lib/serviceWorker';
 
 import './css/index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('app')).render(
   <StrictMode>
     <SWRConfig
       value={{
