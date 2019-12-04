@@ -11,8 +11,6 @@ export default function Movie(props) {
     { suspense: true }
   );
 
-  console.log('data =', data);
-
   return (
     <div className={css.container}>
       <img
