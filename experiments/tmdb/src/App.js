@@ -9,7 +9,6 @@ import Movie from './components/movies/Movie';
 export default function App() {
   return (
     <>
-      <Header />
       <Suspense fallback={<Spinner />}>
         <Router>
           <NowPlaying path="/" />
