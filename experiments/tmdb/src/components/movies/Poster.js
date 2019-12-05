@@ -25,7 +25,11 @@ export default function Poster(props) {
   }
 
   return (
-    <li className={css.container} onMouseEnter={handleMouseEnter} onMouseLeave>
+    <li
+      className={css.container}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Link to={`/${formatted_title}/${props.id}`}>
         <img
           className={css.poster}
