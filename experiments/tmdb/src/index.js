@@ -1,6 +1,7 @@
 /**
- * See documentation on Strict Mode & SWRConfig below for more information:
+ * See documentation on Concurrent Mode, Strict Mode & SWRConfig below for more information:
  *
+ * https://reactjs.org/docs/concurrent-mode-intro.html
  * https://reactjs.org/docs/strict-mode.html
  * https://github.com/zeit/swr
  */
@@ -16,7 +17,11 @@ import * as serviceWorker from './lib/serviceWorker';
 
 import './css/index.css';
 
-ReactDOM.createRoot(document.getElementById('app')).render(
+// Enable concurrent mode with ReactDOM.createRoot
+const rootEl = document.getElementById('app');
+const root = ReactDOM.createRoot(rootEl);
+
+root.render(
   <StrictMode>
     <SWRConfig
       value={{
