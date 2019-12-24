@@ -10,7 +10,6 @@
 import React from 'react';
 import useSwr from 'swr';
 
-import Header from '../Header';
 import Poster from './Poster';
 
 import css from '../../css/NowPlaying.module.css';
@@ -23,10 +22,14 @@ export default function NowPlaying() {
     { suspense: true }
   );
 
+  // const element = document.getElement;
+
   return (
     <>
-      <Header />
-      <ul className={css.container}>
+      <h2>
+        <span className="highlight">Now Playing</span>
+      </h2>
+      <ul id="now_playing" className={css.container}>
         {data.results.map(movie => (
           <Poster
             key={movie.id}
