@@ -1,6 +1,7 @@
 :root {
   --bg: #f2f2f2;
   --primary: #16191c;
+  --highlight: #fffc00;
   --shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
 }
 
@@ -27,7 +28,6 @@ header {
   padding-top: 2.8rem;
 }
 
-h1,
 h2,
 ul,
 p {
@@ -36,12 +36,8 @@ p {
   padding: 0;
 }
 
-h1 {
-  font-size: 3.2rem;
-}
-
 h2 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
@@ -63,4 +59,8 @@ svg {
   to {
     opacity: 0;
   }
+}
+
+.highlight {
+  background-color: var(--highlight);
 }
