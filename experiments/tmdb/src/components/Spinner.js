@@ -42,7 +42,7 @@ export default function Spinner() {
             <line
               strokeWidth="4"
               strokeLinecap="round"
-              stroke="currentcolor"
+              stroke="#16191c"
               transform="translate(32,32)"
               y1="17"
               y2="29"
