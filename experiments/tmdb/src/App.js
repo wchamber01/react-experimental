@@ -7,15 +7,13 @@ import Spinner from './components/Spinner';
 
 export default function App() {
   return (
-    <>
-      <Suspense fallback={<Spinner />}>
-        <Route exact path="/">
-          <NowPlaying />
-        </Route>
-        <Route path="/:movieTitle">
-          <Movie />
-        </Route>
-      </Suspense>
-    </>
+    <Suspense fallback={<Spinner />}>
+      <Route exact path="/">
+        <NowPlaying />
+      </Route>
+      <Route path="/:movieTitle">
+        <Movie />
+      </Route>
+    </Suspense>
   );
 }
