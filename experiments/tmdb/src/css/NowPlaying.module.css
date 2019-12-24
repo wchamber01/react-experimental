@@ -1,6 +1,12 @@
 .container {
   display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 2.5rem;
-  padding-top: 2.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
 }
