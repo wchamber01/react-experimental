@@ -4,9 +4,9 @@
 }
 
 .poster {
-  border-radius: 1.2rem;
+  border-radius: 0.5rem;
   box-shadow: var(--shadow);
-  height: 26rem;
+  height: 23.1rem;
   margin: 0 2rem 2rem 0rem;
-  width: 15rem;
+  width: 15.6rem;
 }
