@@ -1,5 +1,6 @@
 .container {
-  padding-top: 2.5rem;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .backdrop {
