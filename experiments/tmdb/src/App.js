@@ -1,18 +1,20 @@
 import React, { Suspense } from 'react';
-import { Router } from '@reach/router';
+import { Route } from 'react-router-dom';
 
 import Spinner from './components/Spinner';
 import NowPlaying from './components/movies/NowPlaying';
-import Movie from './components/movies/Movie';
+import Movie from './pages/Movie';
 
 export default function App() {
   return (
     <>
       <Suspense fallback={<Spinner />}>
-        <Router>
-          <NowPlaying path="/" />
-          <Movie path=":movieTitle/:movieId" />
-        </Router>
+        <Route exact path="/">
+          <NowPlaying />
+        </Route>
+        <Route path="/:movieTitle">
+          <Movie />
+        </Route>
       </Suspense>
     </>
   );
