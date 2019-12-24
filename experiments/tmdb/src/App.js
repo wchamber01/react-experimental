@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react';
 import { Route } from 'react-router-dom';
 
-import Spinner from './components/Spinner';
-import NowPlaying from './components/movies/NowPlaying';
+import NowPlaying from './pages/Home';
 import Movie from './pages/Movie';
+import Spinner from './components/Spinner';
 
 export default function App() {
   return (
