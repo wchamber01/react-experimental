@@ -21,7 +21,9 @@ function Movie() {
         src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
         alt={data.title}
       />
-      <h2>{data.title}</h2>
+      <h2>
+        <span className="highlight">{data.title}</span>
+      </h2>
       <p>{data.overview}</p>
     </div>
   );
