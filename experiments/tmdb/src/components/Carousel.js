@@ -43,22 +43,18 @@ function Button(props) {
 }
 
 export default function Carousel(props) {
-  const ulEl = useRef(null);
-  const sW = ulEl.current && ulEl.current.scrollWidth;
+  const [scrollX, setScrollX] = useState(0);
 
-  function showButton(direction) {
-    if (props.width < 480) return false;
-    else if (!sW) return false;
+  function checkMobile() {
+    if (window.matchMedia('(pointer: coarse)').matches) return false;
     else return true;
   }
 
   return (
     <div className={css.container}>
-      {showButton(left) && <Button scroll="left" />}
-      <ul ref={ulEl} className={css.list}>
-        {props.children}
-      </ul>
-      {showButton(right) && <Button scroll="right" />}
+      {checkMobile() && <Button scroll="left" />}
+      <ul className={css.list}>{props.children}</ul>
+      {checkMobile() && <Button scroll="right" />}
     </div>
   );
 }
