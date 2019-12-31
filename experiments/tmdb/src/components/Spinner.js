@@ -31,6 +31,7 @@ export default function Spinner() {
       <div className={css.spinner}>
         {animation.map(config => (
           <svg
+            className={css.line}
             key={config.id}
             viewBox="0 0 64 64"
             style={{
