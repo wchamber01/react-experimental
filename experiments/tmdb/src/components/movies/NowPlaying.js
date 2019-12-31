@@ -11,6 +11,7 @@ import React from 'react';
 import useSwr from 'swr';
 
 import Poster from './Poster';
+import ScrollButton from '../ScrollButton';
 
 import css from '../../css/NowPlaying.module.css';
 
@@ -22,13 +23,13 @@ export default function NowPlaying() {
     { suspense: true }
   );
 
-  // const element = document.getElement;
-
   return (
     <>
       <h2>
         <span className="highlight">Now Playing</span>
       </h2>
+      <ScrollButton scroll="left" />
+      <ScrollButton scroll="right" />
       <ul id="now_playing" className={css.container}>
         {data.results.map(movie => (
           <Poster
