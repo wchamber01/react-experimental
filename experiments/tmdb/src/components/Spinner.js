@@ -3,7 +3,7 @@
  * source UI toolkit for building performant, high-quality mobile
  * and deskptop apps using web technologies (HTML, CSS, and JavaScript).
  *
- * Source: https://ionicframework.com/docs/api/spinner.
+ * Source: https://ionicframework.com/docs/api/spinner
  */
 
 import React from 'react';
@@ -35,15 +35,15 @@ export default function Spinner() {
             key={config.id}
             viewBox="0 0 64 64"
             style={{
-              transform: `${config.rotate}`,
               animationDelay: `${config.duration}`,
-              animationDuration: '1000ms'
+              animationDuration: '1000ms',
+              transform: `${config.rotate}`
             }}
           >
             <line
-              strokeWidth="4"
-              strokeLinecap="round"
               stroke="#16191c"
+              strokeLinecap="round"
+              strokeWidth="4"
               transform="translate(32,32)"
               y1="17"
               y2="29"
