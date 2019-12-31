@@ -51,20 +51,6 @@ button {
   cursor: pointer;
 }
 
-svg {
-  animation: animation-fade-out 1s linear 0s infinite normal none running;
-  position: absolute;
-}
-
-@keyframes animation-fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .highlight {
   background-color: var(--highlight);
 }
