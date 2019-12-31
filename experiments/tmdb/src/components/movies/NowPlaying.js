@@ -10,12 +10,11 @@
 import React from 'react';
 import useSwr from 'swr';
 
+import Carousel from '../Carousel';
+
 import Poster from './Poster';
-import ScrollButton from '../ScrollButton';
 
-import css from '../../css/NowPlaying.module.css';
-
-export default function NowPlaying() {
+export default function NowPlaying(props) {
   const {
     data
   } = useSwr(
@@ -28,9 +27,7 @@ export default function NowPlaying() {
       <h2>
         <span className="highlight">Now Playing</span>
       </h2>
-      <ScrollButton scroll="left" />
-      <ScrollButton scroll="right" />
-      <ul id="now_playing" className={css.container}>
+      <Carousel id="now_playing" width={props.width}>
         {data.results.map(movie => (
           <Poster
             key={movie.id}
@@ -39,7 +36,7 @@ export default function NowPlaying() {
             posterPath={movie.poster_path}
           />
         ))}
-      </ul>
+      </Carousel>
     </>
   );
 }
