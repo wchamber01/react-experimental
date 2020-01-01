@@ -13,7 +13,7 @@ import useSwr from 'swr';
 import Carousel from '../Carousel';
 import Poster from './Poster';
 
-export default function NowPlaying(props) {
+export default function NowPlaying() {
   const {
     data
   } = useSwr(
