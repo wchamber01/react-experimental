@@ -8,7 +8,7 @@
   box-shadow: var(--shadow);
   height: 23.1rem;
   margin: 0 2rem 2rem 0rem;
-  scroll-snap-align: end;
+  scroll-snap-align: start;
   scroll-snap-stop: always;
   width: 15.6rem;
 }
