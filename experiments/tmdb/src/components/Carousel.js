@@ -8,6 +8,19 @@ import css from '../css/Carousel.module.css';
 function Button(props) {
   const buttonEl = useRef(null);
 
+  // check if device has a touch screen
+  function checkMobile() {
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      return false;
+    } else if (props.listRef.current === null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function checkScrollPosition() {}
+
   function scroll() {
     const sW = props.listRef.current.scrollWidth;
     const childrenCount = props.listRef.current.childElementCount;
@@ -26,44 +39,37 @@ function Button(props) {
   }
 
   return (
-    <button
-      ref={buttonEl}
-      className={css.button}
-      onClick={scroll}
-      onPointerUp={blur}
-      style={
-        props.direction === 'L' ? { left: '-1.6rem' } : { right: '-1.6rem' }
-      }
-    >
-      <img
-        src={props.direction === 'L' ? left : right}
-        alt={`${
-          props.direction === 'L' ? 'left' : 'right'
-        } carousel scroll button`}
-      />
-    </button>
+    checkMobile() && (
+      <button
+        ref={buttonEl}
+        className={css.button}
+        onClick={scroll}
+        onPointerUp={blur}
+        style={
+          props.direction === 'L' ? { left: '-1.6rem' } : { right: '-1.6rem' }
+        }
+      >
+        <img
+          src={props.direction === 'L' ? left : right}
+          alt={`${
+            props.direction === 'L' ? 'left' : 'right'
+          } carousel scroll button`}
+        />
+      </button>
+    )
   );
 }
 
 export default function Carousel(props) {
   const listEl = useRef(null);
 
-  // check if device is mobile
-  function checkMobile() {
-    if (window.matchMedia('(pointer: coarse)').matches) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
   return (
     <div className={css.container}>
-      {checkMobile() && <Button direction="L" listRef={listEl} />}
+      <Button direction="L" listRef={listEl} />
       <ul ref={listEl} className={css.list}>
         {props.children}
       </ul>
-      {checkMobile() && <Button direction="R" listRef={listEl} />}
+      <Button direction="R" listRef={listEl} />
     </div>
   );
 }
