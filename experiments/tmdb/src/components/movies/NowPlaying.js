@@ -11,7 +11,6 @@ import React from 'react';
 import useSwr from 'swr';
 
 import Carousel from '../Carousel';
-
 import Poster from './Poster';
 
 export default function NowPlaying(props) {
@@ -27,7 +26,7 @@ export default function NowPlaying(props) {
       <h2>
         <span className="highlight">Now Playing</span>
       </h2>
-      <Carousel id="now_playing" width={props.width}>
+      <Carousel>
         {data.results.map(movie => (
           <Poster
             key={movie.id}
