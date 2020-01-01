@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import left from '../lib/arrow-left-bold.svg';
 import right from '../lib/arrow-right-bold.svg';
@@ -8,16 +8,18 @@ import css from '../css/Carousel.module.css';
 function Button(props) {
   const buttonEl = useRef(null);
 
-  function scrollX() {
-    // const c = document.getElementById(props.id);
-    // const cW = document.getElementById(props.id).clientWidth;
-    // const sW = document.getElementById(props.id).scrollWidth;
-    // const liW = document.getElementById(props.id).firstElementChild.clientWidth;
-    // c.scroll({
-    //   top: 0,
-    //   left: x + (liW * 2),
-    //   behavior: 'smooth'
-    // });
+  function scroll() {
+    console.log(props.listRef);
+    const sW = props.listRef.current.scrollWidth;
+    const childrenCount = props.listRef.current.childElementCount;
+    const move =
+      (sW / (childrenCount / 2)) * (props.scroll === 'left' ? -1 : 1);
+
+    props.listRef.current.scrollBy({
+      top: 0,
+      left: move,
+      behavior: 'smooth'
+    });
   }
 
   function blur() {
@@ -28,7 +30,7 @@ function Button(props) {
     <button
       ref={buttonEl}
       className={css.button}
-      onClick={scrollX}
+      onClick={scroll}
       onPointerUp={blur}
       style={
         props.scroll === 'left' ? { left: '-1.6rem' } : { right: '-1.6rem' }
@@ -43,7 +45,7 @@ function Button(props) {
 }
 
 export default function Carousel(props) {
-  const [scrollX, setScrollX] = useState(0);
+  const listEl = useRef(null);
 
   function checkMobile() {
     if (window.matchMedia('(pointer: coarse)').matches) return false;
@@ -52,9 +54,11 @@ export default function Carousel(props) {
 
   return (
     <div className={css.container}>
-      {checkMobile() && <Button scroll="left" />}
-      <ul className={css.list}>{props.children}</ul>
-      {checkMobile() && <Button scroll="right" />}
+      {checkMobile() && <Button scroll="left" listRef={listEl} />}
+      <ul ref={listEl} className={css.list}>
+        {props.children}
+      </ul>
+      {checkMobile() && <Button scroll="right" listRef={listEl} />}
     </div>
   );
 }
