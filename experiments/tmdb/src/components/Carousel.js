@@ -12,9 +12,9 @@ function Button(props) {
   useEffect(() => {
     // if device has a touch screen
     if (!window.matchMedia('(pointer: coarse)').matches) {
-      checkScrollPosition(100, 0);
+      checkScrollPosition(0, 0);
     }
-  }, [props.currX]);
+  });
 
   function scroll() {
     const sW = props.listRef.current.scrollWidth;
