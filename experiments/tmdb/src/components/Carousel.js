@@ -17,14 +17,15 @@ function Button(props) {
   });
 
   function scroll() {
+    const cW = props.listRef.current.clientWidth;
     const sW = props.listRef.current.scrollWidth;
-    const childrenCount = props.listRef.current.childElementCount;
-    const sX =
-      (sW / Math.floor(childrenCount / 2)) * (props.direction === 'L' ? -1 : 1);
+    const chW = sW / props.listRef.current.childElementCount;
+    const direction = props.direction === 'L' ? -1 : 1;
+    const sX = Math.ceil(cW / 2 / chW) * chW * direction;
 
-    props.listRef.current.scrollBy({
+    props.listRef.current.scrollTo({
       top: 0,
-      left: sX,
+      left: props.X + sX,
       behavior: 'smooth'
     });
 
@@ -32,9 +33,7 @@ function Button(props) {
   }
 
   function checkScrollPosition(sW, sX) {
-    const cW = props.listRef.current.clientWidth;
-    const nextX = props.currX + sX;
-    console.log('nextX =', nextX);
+    const nextX = props.X + sX;
 
     if (props.direction === 'L') {
       if (nextX > 0) {
@@ -46,7 +45,7 @@ function Button(props) {
       setShow(true);
     }
 
-    props.setCurrX(nextX);
+    props.setX(nextX);
   }
 
   function blur() {
@@ -76,26 +75,16 @@ function Button(props) {
 }
 
 export default function Carousel(props) {
-  const [currX, setCurrX] = useState(0);
+  const [X, setX] = useState(0);
   const listEl = useRef(null);
 
   return (
     <div className={css.container}>
-      <Button
-        direction="L"
-        listRef={listEl}
-        currX={currX}
-        setCurrX={setCurrX}
-      />
+      <Button direction="L" listRef={listEl} X={X} setX={setX} />
       <ul ref={listEl} className={css.list}>
         {props.children}
       </ul>
-      <Button
-        direction="R"
-        listRef={listEl}
-        currX={currX}
-        setCurrX={setCurrX}
-      />
+      <Button direction="R" listRef={listEl} X={X} setX={setX} />
     </div>
   );
 }
