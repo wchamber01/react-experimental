@@ -10,7 +10,7 @@ function Button(props) {
   const buttonEl = useRef(null);
 
   useEffect(() => {
-    function renderButtons() {
+    function displayButtons() {
       if (props.direction === 'L') {
         if (props.X > 0) {
           setShow(true);
@@ -31,7 +31,7 @@ function Button(props) {
 
     // if device does not has a touch screen
     if (!window.matchMedia('(pointer: coarse)').matches) {
-      renderButtons();
+      displayButtons();
     }
   }, [props.direction, props.X, props.listRef]);
 
