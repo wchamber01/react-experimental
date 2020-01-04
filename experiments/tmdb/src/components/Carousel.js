@@ -10,42 +10,46 @@ function Button(props) {
   const buttonEl = useRef(null);
 
   useEffect(() => {
-    // if device has a touch screen
-    if (!window.matchMedia('(pointer: coarse)').matches) {
-      checkScrollPosition(0, 0);
+    function renderButtons() {
+      if (props.direction === 'L') {
+        if (props.X > 0) {
+          setShow(true);
+        } else {
+          setShow(false);
+        }
+      } else if (props.direction === 'R') {
+        const sW = props.listRef.current.scrollWidth;
+        const cW = props.listRef.current.clientWidth;
+
+        if (props.X < sW - cW) {
+          setShow(true);
+        } else {
+          setShow(false);
+        }
+      }
     }
-  });
+
+    // if device does not has a touch screen
+    if (!window.matchMedia('(pointer: coarse)').matches) {
+      renderButtons();
+    }
+  }, [props.direction, props.X, props.listRef]);
 
   function scroll() {
-    const cW = props.listRef.current.clientWidth;
     const sW = props.listRef.current.scrollWidth;
+    const cW = props.listRef.current.clientWidth;
     const chW = sW / props.listRef.current.childElementCount;
     const direction = props.direction === 'L' ? -1 : 1;
     const sX = Math.ceil(cW / 2 / chW) * chW * direction;
+    const nX = props.X + sX;
 
     props.listRef.current.scrollTo({
       top: 0,
-      left: props.X + sX,
+      left: nX,
       behavior: 'smooth'
     });
 
-    checkScrollPosition(sW, sX);
-  }
-
-  function checkScrollPosition(sW, sX) {
-    const nextX = props.X + sX;
-
-    if (props.direction === 'L') {
-      if (nextX > 0) {
-        setShow(true);
-      } else {
-        setShow(false);
-      }
-    } else {
-      setShow(true);
-    }
-
-    props.setX(nextX);
+    props.setX(nX);
   }
 
   function blur() {
