@@ -17,7 +17,7 @@ export default function NowPlaying() {
   const {
     data
   } = useSwr(
-    'https://api.themoviedb.org/3/movie/now_playing?page=1&language=en-US',
+    'https://api.themoviedb.org/3/movie/now_playing?page=1&region=US&language=en-US',
     { suspense: true }
   );
 
