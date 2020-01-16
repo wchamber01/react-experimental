@@ -8,7 +8,7 @@ export default function Upcoming() {
   const {
     data
   } = useSwr(
-    'https://api.themoviedb.org/3/movie/upcoming?region=US&language=en-US',
+    'https://api.themoviedb.org/3/movie/upcoming?page=1&region=US&language=en-US',
     { suspense: true }
   );
 
