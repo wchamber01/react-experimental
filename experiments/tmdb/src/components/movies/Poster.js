@@ -19,11 +19,20 @@ export default function Poster(props) {
   return (
     <li className={css.container}>
       <Link to={`/${formatTitle(props.title)}/${props.id}`}>
-        <img
-          className={css.poster}
-          src={`https://image.tmdb.org/t/p/w342${props.posterPath}`}
-          alt={props.title}
-        />
+        {props.posterPath ? (
+          <img
+            className={css.poster}
+            src={`https://image.tmdb.org/t/p/w342${props.posterPath}`}
+            alt={props.title}
+          />
+        ) : (
+          <div className={`${css.empty} ${css.poster}`}>
+            <h4 className="highlight">
+              {props.title} ({props.releaseYear})
+            </h4>
+          </div>
+        )}
+        <span className={css.frame}></span>
       </Link>
     </li>
   );
