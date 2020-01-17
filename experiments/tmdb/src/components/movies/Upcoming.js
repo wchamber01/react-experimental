@@ -24,6 +24,7 @@ export default function Upcoming() {
             id={movie.id}
             title={movie.title}
             posterPath={movie.poster_path}
+            releaseYear={movie.release_date.slice(0, 4)}
           />
         ))}
       </Carousel>
