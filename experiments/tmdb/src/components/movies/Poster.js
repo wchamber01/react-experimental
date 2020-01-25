@@ -32,7 +32,6 @@ export default function Poster(props) {
             </h4>
           </div>
         )}
-        <span className={css.frame}></span>
       </Link>
     </li>
   );
