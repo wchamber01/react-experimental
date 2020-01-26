@@ -17,7 +17,7 @@ export default function Poster(props) {
   }
 
   return (
-    <li className={css.container}>
+    <li>
       <Link to={`/${formatTitle(props.title)}/${props.id}`}>
         {props.posterPath ? (
           <img
