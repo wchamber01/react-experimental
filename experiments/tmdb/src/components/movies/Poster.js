@@ -1,3 +1,14 @@
+/**
+ * react-router-dom's API does not currently support the
+ * concurrent mode useTransition hook. It would be ideal to
+ * show a transition state before switching to the Movie page.
+ *
+ * Here is an example of an experimental router that utilizes
+ * the concurrent mode useTransition hook:
+ *
+ * https://github.com/relayjs/relay-examples/tree/master/issue-tracker/src/routing
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +20,7 @@ export default function Poster(props) {
 
     // Some movie titles end in parentheses. For example,
     // Birds of Prey (And the Fantabulous Emancipation of One Harley Quinn)
-    if (formattedTitle.charAt(formattedTitle - 1) === '-') {
+    if (formattedTitle.charAt(formattedTitle.length - 1) === '-') {
       return formattedTitle.slice(0, -1);
     } else {
       return formattedTitle;
@@ -18,7 +29,12 @@ export default function Poster(props) {
 
   return (
     <li>
-      <Link to={`/${formatTitle(props.title)}/${props.id}`}>
+      <Link
+        to={{
+          pathname: `/${formatTitle(props.title)}`,
+          state: { movieId: props.id }
+        }}
+      >
         {props.posterPath ? (
           <img
             className={css.poster}
