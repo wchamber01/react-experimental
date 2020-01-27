@@ -1,14 +1,7 @@
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
 .poster {
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
   height: 23.1rem;
   margin: 0 2rem 2rem 0rem;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   width: 15.6rem;
 }
