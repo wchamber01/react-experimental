@@ -7,9 +7,12 @@ import Upcoming from '../components/movies/Upcoming';
 
 export default function Home() {
   return (
-    <div className={css.container}>
-      <NowPlaying />
-      <Upcoming />
-    </div>
+    <>
+      <div className={css.dynamicPaddingTop}></div>
+      <div className={css.container}>
+        <NowPlaying />
+        <Upcoming />
+      </div>
+    </>
   );
 }
