@@ -1,5 +1,9 @@
+.dynamicPaddingTop {
+  height: calc(7.5vw - 1.5rem);
+  max-height: 3rem;
+}
+
 .container {
   margin: 0 auto;
-  padding-top: calc(5vw - 1.5rem);
   width: 90%;
 }
