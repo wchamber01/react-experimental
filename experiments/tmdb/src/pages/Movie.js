@@ -16,14 +16,15 @@ export default function Movie() {
 
   return (
     <div className={css.container}>
-      <img
-        className={css.backdrop}
-        src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
-        alt={data.title}
-      />
-      <h2>
-        <span className="highlight">{data.title}</span>
-      </h2>
+      <div className={css.backdrop}>
+        <img
+          src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
+          alt={data.title}
+        />
+        <h2 className={css.title}>
+          <span className="highlight">{data.title}</span>
+        </h2>
+      </div>
       <p>{data.overview}</p>
     </div>
   );
