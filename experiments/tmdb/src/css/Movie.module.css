@@ -4,6 +4,17 @@
 }
 
 .backdrop {
-  width: 100%;
+  position: relative;
+}
+
+.backdrop > img {
   object-fit: contain;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1.25rem;
+  font-style: italic;
 }
