@@ -14,7 +14,6 @@ export default function Poster(props) {
 
   function formatTitle(s) {
     const formattedTitle = s.toLowerCase().replace(/\W+/g, '-');
-
     // Some movie titles end in parentheses. For example,
     // Birds of Prey (And the Fantabulous Emancipation of One Harley Quinn)
     if (formattedTitle.charAt(formattedTitle.length - 1) === '-') {
