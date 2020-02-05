@@ -30,7 +30,7 @@ export default function NowPlaying() {
         {data.results.map(movie => (
           <Poster
             key={movie.id}
-            id={movie.id}
+            movieId={movie.id}
             title={movie.title}
             posterPath={movie.poster_path}
           />
