@@ -10,11 +10,19 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import css from '../../css/Poster.module.css';
 
 export default function Poster(props) {
+  const navigate = useNavigate();
+
+  function navigateToMoviePage() {
+    navigate(`/${formatTitle(props.title)}`, {
+      state: { movieId: props.movieId }
+    });
+  }
+
   function formatTitle(s) {
     const formattedTitle = s.toLowerCase().replace(/\W+/g, '-');
 
@@ -29,26 +37,23 @@ export default function Poster(props) {
 
   return (
     <li>
-      <Link
-        to={{
-          pathname: `/${formatTitle(props.title)}`,
-          state: { movieId: props.id }
-        }}
-      >
-        {props.posterPath ? (
-          <img
-            className={css.poster}
-            src={`https://image.tmdb.org/t/p/w342${props.posterPath}`}
-            alt={props.title}
-          />
-        ) : (
-          <div className={`${css.empty} ${css.poster}`}>
-            <h4 className="highlight">
-              {props.title} ({props.releaseYear})
-            </h4>
-          </div>
-        )}
-      </Link>
+      {props.posterPath ? (
+        <img
+          className={css.poster}
+          src={`https://image.tmdb.org/t/p/w342${props.posterPath}`}
+          alt={props.title}
+          onClick={navigateToMoviePage}
+        />
+      ) : (
+        <div
+          className={`${css.empty} ${css.poster}`}
+          onClick={navigateToMoviePage}
+        >
+          <h4 className="highlight">
+            {props.title} ({props.releaseYear})
+          </h4>
+        </div>
+      )}
     </li>
   );
 }
