@@ -1,14 +1,3 @@
-/**
- * react-router-dom's API does not currently support the
- * concurrent mode useTransition hook. It would be ideal to
- * show a transition state before switching to the Movie page.
- *
- * Here is an example of an experimental router that utilizes
- * the concurrent mode useTransition hook:
- *
- * https://github.com/relayjs/relay-examples/tree/master/issue-tracker/src/routing
- */
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
