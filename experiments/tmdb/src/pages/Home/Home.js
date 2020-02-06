@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { NowPlaying, Upcoming } from '../../components/movies';
+import NowPlaying from './NowPlaying';
+import Upcoming from './Upcoming';
 
 import css from './Home.module.css';
 
