@@ -2,6 +2,9 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import useSwr from 'swr';
 
+import Backdrop from './Backdrop';
+import Content from './Content';
+
 import css from './Movie.module.css';
 
 export default function Movie() {
@@ -15,17 +18,15 @@ export default function Movie() {
   );
 
   return (
-    <div className={css.container}>
-      <div className={css.backdrop}>
-        <img
-          src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
-          alt={data.title}
-        />
-        <h1 className={css.title}>
-          <span className="highlight">{data.title}</span>
-        </h1>
-      </div>
-      <p>{data.overview}</p>
-    </div>
+    <main className={css.container}>
+      <Backdrop backdropPath={data.backdrop_path} title={data.title} />
+      <Content
+        title={data.title}
+        genres={data.genres}
+        releaseDate={data.release_date}
+        runtime={data.runtime}
+        overview={data.overview}
+      />
+    </main>
   );
 }
