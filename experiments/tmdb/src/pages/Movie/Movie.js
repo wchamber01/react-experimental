@@ -18,7 +18,7 @@ export default function Movie() {
   );
 
   return (
-    <main className={css.container}>
+    <main style={{ margin: '0 auto', width: '95%' }}>
       <Backdrop backdropPath={data.backdrop_path} title={data.title} />
       <Content
         title={data.title}
