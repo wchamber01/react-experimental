@@ -5,8 +5,6 @@ import useSwr from 'swr';
 import Backdrop from './Backdrop';
 import Content from './Content';
 
-import css from './Movie.module.css';
-
 export default function Movie() {
   const { state } = useLocation();
 
