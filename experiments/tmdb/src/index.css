@@ -40,6 +40,10 @@ li {
   list-style-type: none;
 }
 
+h1 {
+  font-size: calc(2rem + (36 - 20) * ((100vw - 30rem) / (1600 - 300)));
+}
+
 h2 {
   font-size: 2.8rem;
   padding-bottom: 1rem;

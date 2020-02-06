@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import useSwr from 'swr';
 
-import css from '../css/Movie.module.css';
+import css from './Movie.module.css';
 
 export default function Movie() {
   const { state } = useLocation();
@@ -21,9 +21,9 @@ export default function Movie() {
           src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
           alt={data.title}
         />
-        <h2 className={css.title}>
+        <h1 className={css.title}>
           <span className="highlight">{data.title}</span>
-        </h2>
+        </h1>
       </div>
       <p>{data.overview}</p>
     </div>

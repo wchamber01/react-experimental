@@ -1,9 +1,9 @@
 import React from 'react';
 
-import NowPlaying from '../components/movies/NowPlaying';
+import NowPlaying from '../../components/movies/NowPlaying';
+import Upcoming from '../../components/movies/Upcoming';
 
-import css from '../css/Home.module.css';
-import Upcoming from '../components/movies/Upcoming';
+import css from './Home.module.css';
 
 export default function Home() {
   return (

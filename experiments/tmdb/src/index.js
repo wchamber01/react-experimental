@@ -16,7 +16,7 @@ import App from './App';
 import fetch from './lib/fetch';
 import * as serviceWorker from './lib/serviceWorker';
 
-import './css/index.css';
+import './index.css';
 
 // Enable concurrent mode with ReactDOM.createRoot
 const rootEl = document.getElementById('app');

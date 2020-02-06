@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
 }
 
 .backdrop {
@@ -14,7 +14,7 @@
 
 .title {
   position: absolute;
-  bottom: 0.5rem;
+  bottom: 1rem;
   left: 1.25rem;
   font-style: italic;
 }

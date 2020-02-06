@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import left from '../lib/arrow-left-bold.svg';
-import right from '../lib/arrow-right-bold.svg';
+import left from '../../lib/arrow-left-bold.svg';
+import right from '../../lib/arrow-right-bold.svg';
 
-import css from '../css/Carousel.module.css';
+import css from './Carousel.module.css';
 
 function Button(props) {
   const [show, setShow] = useState(false);

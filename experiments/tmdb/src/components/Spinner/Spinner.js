@@ -8,7 +8,7 @@
 
 import React from 'react';
 
-import css from '../css/Spinner.module.css';
+import css from './Spinner.module.css';
 
 const animation = [
   { id: 1, rotate: 'rotate(180deg)', duration: '-1000ms' },
