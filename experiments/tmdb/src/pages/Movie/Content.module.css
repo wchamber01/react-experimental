@@ -1,0 +1,16 @@
+.title {
+  bottom: calc(1.25rem + 0.5vw);
+  left: calc(1.25rem + 0.5vw);
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.info {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
