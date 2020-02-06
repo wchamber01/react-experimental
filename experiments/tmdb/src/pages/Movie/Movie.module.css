@@ -14,7 +14,7 @@
 
 .title {
   position: absolute;
-  bottom: 1rem;
-  left: 1.25rem;
+  bottom: calc(1.25rem + 0.5vw);
+  left: calc(1.25rem + 0.5vw);
   font-style: italic;
 }
