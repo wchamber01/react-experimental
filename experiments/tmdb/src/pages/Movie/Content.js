@@ -23,15 +23,13 @@ export default function Content(props) {
 
   return (
     <section className={css.content}>
-      <h1 className={css.title}>
-        <span className="highlight">{props.title}</span>
-      </h1>
+      <h1 className={css.title}>{props.title}</h1>
       <div className={css.info}>
         {props.genres.length > 0 && listGenres(props.genres)}
         {props.releaseDate.slice(0, 4)}
         {props.runtime !== 0 && runtimeConversion(props.runtime)}
       </div>
-      <p>{props.overview}</p>
+      <p className={css.overview}>{props.overview}</p>
     </section>
   );
 }

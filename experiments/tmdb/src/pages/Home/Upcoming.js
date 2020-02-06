@@ -14,9 +14,7 @@ export default function Upcoming() {
 
   return (
     <>
-      <h2>
-        <span className="highlight">Upcoming</span>
-      </h2>
+      <h2>Upcoming</h2>
       <Carousel>
         {data.results.map(movie => (
           <Poster

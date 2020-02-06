@@ -23,9 +23,7 @@ export default function NowPlaying() {
 
   return (
     <>
-      <h2>
-        <span className="highlight">Now Playing</span>
-      </h2>
+      <h2>Now Playing</h2>
       <Carousel>
         {data.results.map(movie => (
           <Poster
