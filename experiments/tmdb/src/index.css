@@ -1,7 +1,8 @@
 :root {
   --bg: #f2f2f2;
   --primary: #16191c;
-  --highlight: #fffc00;
+  --secondary: rgba(0, 0, 0, 0.4);
+  --highlight: rgba(255, 252, 0, 0.5);
   --shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.25);
 }
 
@@ -44,10 +45,11 @@ li {
 
 h1 {
   font-size: calc(2rem + (36 - 20) * ((100vw - 30rem) / (1600 - 300)));
+  font-style: italic;
 }
 
 h2 {
-  font-size: 2.8rem;
+  font-size: calc(2.4rem + (28 - 20) * ((100vw - 30rem) / (1600 - 300)));
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
@@ -68,8 +70,4 @@ a {
 
 button {
   cursor: pointer;
-}
-
-.highlight {
-  background-color: var(--highlight);
 }
