@@ -1,7 +1,6 @@
 .title {
   bottom: calc(1.25rem + 0.5vw);
   left: calc(1.25rem + 0.5vw);
-  font-style: italic;
   padding-bottom: 1rem;
 }
 
@@ -10,7 +9,14 @@
 }
 
 .info {
+  color: var(--secondary);
   font-size: 1.4rem;
   font-weight: 600;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+}
+
+.overview {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 1.6rem;
+  padding: 1.6rem 2.4rem 2rem;
 }
