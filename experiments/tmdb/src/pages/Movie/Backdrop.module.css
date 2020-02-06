@@ -1,0 +1,18 @@
+.backdrop {
+  position: relative;
+}
+
+.backdrop > img:nth-child(1) {
+  position: absolute;
+  left: 2%;
+  top: 3%;
+  background-color: var(--highlight);
+  cursor: pointer;
+  height: calc(3.2rem + 0.75vw);
+  width: calc(3.2rem + 0.75vw);
+}
+
+.backdrop > img:nth-child(2) {
+  object-fit: contain;
+  width: 100%;
+}
