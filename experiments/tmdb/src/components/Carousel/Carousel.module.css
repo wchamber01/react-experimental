@@ -6,7 +6,6 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding-bottom: 1rem;
   padding-top: 1rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
