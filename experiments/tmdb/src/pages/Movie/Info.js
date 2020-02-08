@@ -6,8 +6,8 @@ import { MovieContext } from './MovieContext';
 import css from './Info.module.css';
 
 export default function Info() {
-  const castEl = useRef(null);
   const { movie, movieId } = useContext(MovieContext);
+  const castEl = useRef(null);
 
   const { data } = useSwr(
     `https://api.themoviedb.org/3/movie/${movieId}/credits`,
