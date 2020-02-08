@@ -4,6 +4,7 @@ import useSwr from 'swr';
 
 import Backdrop from './Backdrop';
 import Content from './Content';
+
 import { MovieContext } from './MovieContext';
 
 export default function Movie() {
