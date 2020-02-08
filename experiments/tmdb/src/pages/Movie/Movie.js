@@ -4,6 +4,7 @@ import useSwr from 'swr';
 
 import Backdrop from './Backdrop';
 import Content from './Content';
+import { MovieContext } from './MovieContext';
 
 export default function Movie() {
   const { state } = useLocation();
@@ -16,15 +17,11 @@ export default function Movie() {
   );
 
   return (
-    <main style={{ margin: '0 auto', width: '95%' }}>
-      <Backdrop backdropPath={data.backdrop_path} title={data.title} />
-      <Content
-        title={data.title}
-        genres={data.genres}
-        releaseDate={data.release_date}
-        runtime={data.runtime}
-        overview={data.overview}
-      />
-    </main>
+    <MovieContext.Provider value={{ movie: data, movieId: state.movieId }}>
+      <main style={{ margin: '0 auto', width: '95%' }}>
+        <Backdrop />
+        <Content />
+      </main>
+    </MovieContext.Provider>
   );
 }
