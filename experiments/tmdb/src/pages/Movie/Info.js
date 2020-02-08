@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import useSwr from 'swr';
 
 import ReleaseDate from './ReleaseDate';
@@ -32,23 +32,12 @@ export default function Info() {
     return director.name;
   }
 
-  function getCast(cast) {
+  function generateString(A) {
     const result = [];
-    const len = cast.length < 3 ? cast.length : 3;
+    const len = A.length < 3 ? A.length : 3;
 
     for (let i = 0; i < len; i++) {
-      result.push(cast[i].name);
-    }
-
-    return result.join(', ');
-  }
-
-  function listGenres(genres) {
-    const result = [];
-    const len = genres.length < 3 ? genres.length : 3;
-
-    for (let i = 0; i < len; i++) {
-      result.push(genres[i].name);
+      result.push(A[i].name);
     }
 
     return result.join(', ');
@@ -62,7 +51,7 @@ export default function Info() {
   }
 
   return (
-    <ul>
+    <ul className={css.list}>
       <li className={css.info}>
         <span className={css.credits}>Director</span>
         {getDirector(credits.crew)}
@@ -70,13 +59,15 @@ export default function Info() {
       <li className={css.info} ref={castEl}>
         <span className={css.credits}>Starring</span>
         <span style={checkClientHeight() ? { lineHeight: `2rem` } : null}>
-          {getCast(credits.cast)}
+          {generateString(credits.cast)}
         </span>
       </li>
-      <li className={css.info}>
-        <span className={css.credits}>Genre</span>
-        {movie.genres.length > 0 && listGenres(movie.genres)}
-      </li>
+      {movie.genres.length > 0 && (
+        <li className={css.info}>
+          <span className={css.credits}>Genre</span>
+          {generateString(movie.genres)}
+        </li>
+      )}
       <ReleaseDate />
       {movie.runtime !== 0 ? (
         <li className={css.info}>
