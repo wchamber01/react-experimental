@@ -9,10 +9,14 @@ export default function Backdrop() {
 
   return (
     <section className={css.backdrop}>
-      <img
-        src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-        alt={movie.title}
-      />
+      {movie.backdrop_path ? (
+        <img
+          src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+          alt={movie.title}
+        />
+      ) : (
+        <div className={css.placeholder}></div>
+      )}
     </section>
   );
 }
