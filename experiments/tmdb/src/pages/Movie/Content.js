@@ -1,35 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import Info from './Info';
+import { MovieContext } from './MovieContext';
 
 import css from './Content.module.css';
 
-export default function Content(props) {
-  function listGenres(genres) {
-    let result = '';
-    const len = genres.length < 3 ? genres.length : 3;
-
-    for (let i = 0; i < len; i++) {
-      result += `${genres[i].name} · `;
-    }
-
-    return result;
-  }
-
-  function runtimeConversion(t) {
-    const hours = Math.floor(t / 60);
-    const minutes = t % 60;
-
-    return ` · ${hours} hr ${minutes} min`;
-  }
+export default function Content() {
+  const { movie } = useContext(MovieContext);
 
   return (
     <section className={css.content}>
-      <h1 className={css.title}>{props.title}</h1>
-      <div className={css.info}>
-        {props.genres.length > 0 && listGenres(props.genres)}
-        {props.releaseDate.slice(0, 4)}
-        {props.runtime !== 0 && runtimeConversion(props.runtime)}
+      <h1 className={css.title}>{movie.title}</h1>
+      <Info />
+      <div className={css.overview}>
+        {movie.tagline.length > 0 && (
+          <div className={css.tagline}>{movie.tagline}</div>
+        )}
+        <p>{movie.overview}</p>
       </div>
-      <p className={css.overview}>{props.overview}</p>
     </section>
   );
 }
