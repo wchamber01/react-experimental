@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 
 import Info from './Info';
+
 import { MovieContext } from './MovieContext';
 
 import css from './Content.module.css';
