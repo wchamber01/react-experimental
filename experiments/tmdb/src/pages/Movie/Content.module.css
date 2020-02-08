@@ -1,11 +1,13 @@
+.content {
+  margin: 0 auto;
+  max-width: 102.4rem;
+  padding: 1rem;
+}
+
 .title {
   bottom: calc(1.25rem + 0.5vw);
   left: calc(1.25rem + 0.5vw);
   padding-bottom: 1rem;
-}
-
-.content {
-  padding: 1rem;
 }
 
 .overview {
