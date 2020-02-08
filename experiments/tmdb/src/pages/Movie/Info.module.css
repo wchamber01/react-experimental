@@ -1,3 +1,7 @@
+.list {
+  padding: 0 1rem;
+}
+
 .info {
   display: flex;
   color: var(--secondary);
