@@ -33,6 +33,7 @@ header {
 
 h1,
 h2,
+h3,
 ul,
 p {
   color: var(--primary);
@@ -55,8 +56,9 @@ h2 {
   padding-top: 1rem;
 }
 
-h4 {
-  font-size: 1.6rem;
+h3 {
+  font-size: calc(1.8rem + (24 - 18) * ((100vw - 30rem) / (1600 - 300)));
+  font-style: italic;
 }
 
 p {
