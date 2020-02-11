@@ -9,7 +9,7 @@ export default function App() {
     <Suspense fallback={<Spinner />}>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/:movieTitle" element={<Movie />} />
+        <Route path=":movieId/*" element={<Movie />} />
       </Routes>
     </Suspense>
   );
