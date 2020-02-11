@@ -4,7 +4,7 @@ import useSwr from 'swr';
 
 import Backdrop from './Backdrop';
 import Content from './Content';
-import Clips from './Clips';
+import Videos from './Videos';
 
 import { MovieContext } from './MovieContext';
 
@@ -23,7 +23,7 @@ export default function Movie() {
       <main style={{ margin: '0 auto', width: '95%' }}>
         <Backdrop />
         <Content />
-        <Clips />
+        <Videos />
       </main>
     </MovieContext.Provider>
   );
