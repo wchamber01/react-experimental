@@ -3,6 +3,7 @@
   box-shadow: var(--shadow);
   cursor: pointer;
   height: 23.1rem;
-  margin: 0 2rem 2rem 0rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
   width: 15.6rem;
 }
