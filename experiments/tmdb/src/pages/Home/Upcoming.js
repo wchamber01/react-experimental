@@ -16,7 +16,7 @@ export default function Upcoming() {
     <>
       <h2>Upcoming</h2>
       <div className="description">Movies coming soon to theaters.</div>
-      <Carousel>
+      <Carousel top={40}>
         {data.results.map(movie => (
           <Poster
             key={movie.id}

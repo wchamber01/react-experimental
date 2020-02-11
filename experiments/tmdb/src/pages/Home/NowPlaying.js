@@ -25,7 +25,7 @@ export default function NowPlaying() {
     <>
       <h2>Now Playing</h2>
       <div className="description">Movies now playing in theaters.</div>
-      <Carousel>
+      <Carousel top={40}>
         {data.results.map(movie => (
           <Poster
             key={movie.id}
