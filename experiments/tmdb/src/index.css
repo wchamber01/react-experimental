@@ -58,6 +58,7 @@ h2 {
 h3 {
   font-size: calc(1.8rem + (24 - 18) * ((100vw - 30rem) / (1600 - 300)));
   font-style: italic;
+  padding-bottom: 1rem;
 }
 
 p {
@@ -78,5 +79,5 @@ button {
   color: var(--tertiary);
   font-size: calc(1.3rem + (16 - 13) * ((100vw - 30rem) / (1600 - 300)));
   font-weight: 500;
-  padding-bottom: 1.75rem;
+  padding-bottom: 2.75rem;
 }
