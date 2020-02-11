@@ -24,6 +24,7 @@ export default function NowPlaying() {
   return (
     <>
       <h2>Now Playing</h2>
+      <div className="description">Movies now playing in theaters.</div>
       <Carousel>
         {data.results.map(movie => (
           <Poster
