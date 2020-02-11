@@ -1,0 +1,27 @@
+.clips {
+  margin: 0 auto;
+  max-width: 102.4rem;
+  padding: 0.5rem 1.5rem 2rem;
+  margin-bottom: 5rem;
+}
+
+.thumbnail {
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  height: 15.6rem;
+  margin: 1rem 2rem 1rem 0rem;
+  min-width: 23.1rem;
+}
+
+.caption {
+  color: var(--secondary);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-right: 2rem;
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+.placeholder {
+  height: 5rem;
+}
