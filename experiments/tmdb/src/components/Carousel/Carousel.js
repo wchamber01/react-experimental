@@ -9,15 +9,18 @@ function Button(props) {
   const [show, setShow] = useState(false);
   const buttonEl = useRef(null);
 
+  const L_Boolean = props.direction === 'L';
+  const R_Boolean = props.direction === 'R';
+
   useEffect(() => {
     function displayButtons() {
-      if (props.direction === 'L') {
+      if (L_Boolean) {
         if (props.X > 0) {
           setShow(true);
         } else {
           setShow(false);
         }
-      } else if (props.direction === 'R') {
+      } else if (R_Boolean) {
         const sW = props.listRef.current.scrollWidth;
         const cW = props.listRef.current.clientWidth;
 
@@ -33,13 +36,14 @@ function Button(props) {
     if (!window.matchMedia('(pointer: coarse)').matches) {
       displayButtons();
     }
-  }, [props.direction, props.X, props.listRef]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.X]);
 
   function scroll() {
     const sW = props.listRef.current.scrollWidth;
     const cW = props.listRef.current.clientWidth;
     const chW = sW / props.listRef.current.childElementCount;
-    const direction = props.direction === 'L' ? -1 : 1;
+    const direction = L_Boolean ? -1 : 1;
     const sX = Math.ceil(cW / 2 / chW) * chW * direction;
     const nX = props.X + sX;
 
@@ -63,15 +67,14 @@ function Button(props) {
         className={css.button}
         onClick={scroll}
         onPointerUp={blur}
-        style={
-          props.direction === 'L' ? { left: '-1.6rem' } : { right: '-1.6rem' }
-        }
+        style={{
+          ...(L_Boolean ? { left: '-1.6rem' } : { right: '-1.6rem' }),
+          ...{ top: `${props.top}%` }
+        }}
       >
         <img
-          src={props.direction === 'L' ? left : right}
-          alt={`${
-            props.direction === 'L' ? 'left' : 'right'
-          } carousel scroll button`}
+          src={L_Boolean ? left : right}
+          alt={`${L_Boolean ? 'left' : 'right'} carousel scroll button`}
         />
       </button>
     )
@@ -84,11 +87,23 @@ export default function Carousel(props) {
 
   return (
     <div className={css.container}>
-      <Button direction="L" listRef={listEl} X={X} setX={setX} />
+      <Button
+        direction="L"
+        listRef={listEl}
+        X={X}
+        setX={setX}
+        top={props.top}
+      />
       <ul ref={listEl} className={css.list}>
         {props.children}
       </ul>
-      <Button direction="R" listRef={listEl} X={X} setX={setX} />
+      <Button
+        direction="R"
+        listRef={listEl}
+        X={X}
+        setX={setX}
+        top={props.top}
+      />
     </div>
   );
 }
