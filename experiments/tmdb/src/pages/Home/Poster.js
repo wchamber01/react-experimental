@@ -1,15 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import css from './Poster.module.css';
+import css from './css/Poster.module.css';
 
 export default function Poster(props) {
   const navigate = useNavigate();
 
   function navigateToMoviePage() {
-    navigate(`/${formatTitle(props.title)}`, {
-      state: { movieId: props.movieId }
-    });
+    navigate(`/${props.movieId}/${formatTitle(props.title)}`);
   }
 
   function formatTitle(s) {

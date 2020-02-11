@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { MovieContext } from './MovieContext';
 
-import css from './Backdrop.module.css';
+import css from './css/Backdrop.module.css';
 
 export default function Backdrop() {
   const { movie } = useContext(MovieContext);

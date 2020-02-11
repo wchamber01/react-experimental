@@ -3,7 +3,7 @@ import React from 'react';
 import NowPlaying from './NowPlaying';
 import Upcoming from './Upcoming';
 
-import css from './Home.module.css';
+import css from './css/Home.module.css';
 
 export default function Home() {
   return (

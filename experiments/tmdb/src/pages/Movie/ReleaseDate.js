@@ -4,7 +4,7 @@ import useSwr from 'swr';
 import { MovieContext } from './MovieContext';
 import { months, convertToOrdinal } from '../../lib/calendar';
 
-import css from './Info.module.css';
+import css from './css/Info.module.css';
 
 export default function ReleaseDate() {
   const { movieId } = useContext(MovieContext);

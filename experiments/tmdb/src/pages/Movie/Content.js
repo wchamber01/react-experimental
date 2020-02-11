@@ -4,7 +4,7 @@ import Info from './Info';
 
 import { MovieContext } from './MovieContext';
 
-import css from './Content.module.css';
+import css from './css/Content.module.css';
 
 export default function Content() {
   const { movie } = useContext(MovieContext);

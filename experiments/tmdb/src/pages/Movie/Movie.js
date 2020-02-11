@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSwr from 'swr';
 
 import Backdrop from './Backdrop';
@@ -9,17 +9,17 @@ import Clips from './Clips';
 import { MovieContext } from './MovieContext';
 
 export default function Movie() {
-  const { state } = useLocation();
+  const { movieId } = useParams();
 
   const {
     data
   } = useSwr(
-    `https://api.themoviedb.org/3/movie/${state.movieId}?page=1&language=en-US`,
+    `https://api.themoviedb.org/3/movie/${movieId}?page=1&language=en-US`,
     { suspense: true }
   );
 
   return (
-    <MovieContext.Provider value={{ movie: data, movieId: state.movieId }}>
+    <MovieContext.Provider value={{ movie: data, movieId: movieId }}>
       <main style={{ margin: '0 auto', width: '95%' }}>
         <Backdrop />
         <Content />

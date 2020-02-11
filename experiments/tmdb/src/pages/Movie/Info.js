@@ -5,7 +5,7 @@ import ReleaseDate from './ReleaseDate';
 
 import { MovieContext } from './MovieContext';
 
-import css from './Info.module.css';
+import css from './css/Info.module.css';
 
 export default function Info() {
   const { movie, movieId } = useContext(MovieContext);
