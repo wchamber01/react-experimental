@@ -47,7 +47,11 @@ export default function Info() {
     const hours = Math.floor(t / 60);
     const minutes = t % 60;
 
-    return `${hours} hr ${minutes} min`;
+    if (hours !== 0) {
+      return `${hours} hr ${minutes} min`;
+    } else {
+      return `${minutes} min`;
+    }
   }
 
   return (
