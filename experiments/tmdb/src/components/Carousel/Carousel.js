@@ -69,7 +69,7 @@ function Button(props) {
         onPointerUp={blur}
         style={{
           ...(L_Boolean ? { left: '-1.6rem' } : { right: '-1.6rem' }),
-          ...{ top: `${props.top}%` }
+          ...{ top: `${props.top}px` }
         }}
       >
         <img
