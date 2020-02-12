@@ -58,7 +58,7 @@ h2 {
 h3 {
   font-size: calc(1.8rem + (24 - 18) * ((100vw - 30rem) / (1600 - 300)));
   font-style: italic;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 p {
