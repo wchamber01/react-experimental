@@ -16,11 +16,17 @@ export default function Videos() {
     }
   );
 
+  function generateCaption(type, name) {
+    const caption = name.match(/Trailer\s\d/g);
+
+    return caption ? caption[0] : type;
+  }
+
   if (videos.results.length > 0) {
     return (
       <section className={css.clips}>
         <h3>Videos</h3>
-        <Carousel top={28}>
+        <Carousel top={62}>
           {videos.results.map(result => (
             <li key={result.id}>
               <img
@@ -28,7 +34,9 @@ export default function Videos() {
                 src={`https://img.youtube.com/vi/${result.key}/hqdefault.jpg`}
                 alt={`${result.name} — ${result.type}`}
               />
-              <div className={css.caption}>{result.name}</div>
+              <div className={css.caption}>
+                {generateCaption(result.type, result.name)}
+              </div>
             </li>
           ))}
         </Carousel>
