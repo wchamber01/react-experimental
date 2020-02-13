@@ -56,9 +56,9 @@ h2 {
 }
 
 h3 {
-  font-size: calc(1.8rem + (24 - 18) * ((100vw - 30rem) / (1600 - 300)));
+  font-size: calc(1.6rem + (24 - 16) * ((100vw - 30rem) / (1600 - 300)));
   font-style: italic;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 p {
