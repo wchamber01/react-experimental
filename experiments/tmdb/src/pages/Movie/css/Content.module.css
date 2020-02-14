@@ -13,7 +13,7 @@
 .overview {
   background-color: rgba(0, 0, 0, 0.06);
   border-radius: 1.6rem;
-  margin-top: 0.5rem;
+  margin-top: calc(0.5rem + 0.25vw);
   padding: 1.4rem 2rem 1.6rem;
 }
 
