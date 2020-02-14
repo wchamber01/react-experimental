@@ -29,11 +29,17 @@ export default function Videos() {
         <Carousel top={62}>
           {videos.results.map(result => (
             <li key={result.id}>
-              <img
-                className={css.thumbnail}
-                src={`https://img.youtube.com/vi/${result.key}/hqdefault.jpg`}
-                alt={`${result.name} — ${result.type}`}
-              />
+              <a
+                href={`https://www.youtube.com/watch?v=${result.key}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className={css.thumbnail}
+                  src={`https://img.youtube.com/vi/${result.key}/hqdefault.jpg`}
+                  alt={`${result.name} — ${result.type}`}
+                />
+              </a>
               <div className={css.caption}>
                 {generateCaption(result.type, result.name)}
               </div>
