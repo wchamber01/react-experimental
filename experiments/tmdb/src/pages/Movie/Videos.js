@@ -26,7 +26,7 @@ export default function Videos() {
     return (
       <section className={css.clips}>
         <h3>Videos</h3>
-        <Carousel top={62}>
+        <Carousel top={48.25}>
           {videos.results.map(result => (
             <li key={result.id}>
               <a
@@ -34,11 +34,12 @@ export default function Videos() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <div
                   className={css.thumbnail}
-                  src={`https://img.youtube.com/vi/${result.key}/hqdefault.jpg`}
-                  alt={`${result.name} — ${result.type}`}
-                />
+                  style={{
+                    backgroundImage: `url(https://img.youtube.com/vi/${result.key}/hqdefault.jpg)`
+                  }}
+                ></div>
               </a>
               <div className={css.caption}>
                 {generateCaption(result.type, result.name)}
