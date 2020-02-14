@@ -19,7 +19,9 @@ export default function ReleaseDate() {
   function releaseDateConversion(dates) {
     const { release_dates } = dates.find(date => date.iso_3166_1 === 'US');
     const official_release = release_dates.find(date =>
-      ['', 'North American release'].includes(date.note)
+      ['', 'North American release', 'New York and Los Angeles'].includes(
+        date.note
+      )
     );
 
     const t = official_release.release_date.slice(0, 10);
