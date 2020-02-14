@@ -56,16 +56,20 @@ export default function Info() {
 
   return (
     <ul className={css.list}>
-      <li className={css.info}>
-        <span className={css.credits}>Director</span>
-        {getDirector(credits.crew)}
-      </li>
-      <li className={css.info} ref={castEl}>
-        <span className={css.credits}>Starring</span>
-        <span style={checkClientHeight() ? { lineHeight: `2rem` } : null}>
-          {generateString(credits.cast)}
-        </span>
-      </li>
+      {credits.crew.length > 0 && (
+        <li className={css.info}>
+          <span className={css.credits}>Director</span>
+          {getDirector(credits.crew)}
+        </li>
+      )}
+      {credits.cast.length > 0 && (
+        <li className={css.info} ref={castEl}>
+          <span className={css.credits}>Starring</span>
+          <span style={checkClientHeight() ? { lineHeight: `2rem` } : null}>
+            {generateString(credits.cast)}
+          </span>
+        </li>
+      )}
       {movie.genres.length > 0 && (
         <li className={css.info}>
           <span className={css.credits}>Genre</span>
