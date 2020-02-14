@@ -6,10 +6,13 @@
 }
 
 .thumbnail {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
   cursor: pointer;
-  height: 15.6rem;
+  height: 12.85rem;
   margin-bottom: 0.5rem;
   margin-right: 2rem;
   width: 23.1rem;
