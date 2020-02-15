@@ -24,7 +24,7 @@ export default function Videos() {
 
   if (videos.results.length > 0) {
     return (
-      <section className={css.clips}>
+      <section className={css.videos}>
         <h3>Videos</h3>
         <Carousel top={48.25}>
           {videos.results.map(result => (
