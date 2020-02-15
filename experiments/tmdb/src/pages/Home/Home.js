@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <>
       <div className={css.dynamicPaddingTop}></div>
-      <div className={css.container}>
+      <main className={css.container}>
         <NowPlaying />
         <Upcoming />
-      </div>
+      </main>
     </>
   );
 }
