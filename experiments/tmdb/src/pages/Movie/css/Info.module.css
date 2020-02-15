@@ -4,6 +4,7 @@
 
 .info {
   display: flex;
+  position: relative;
   color: var(--secondary);
   font-size: 1.4rem;
   font-weight: 600;
@@ -14,4 +15,12 @@
   color: var(--tertiary);
   margin-right: 1rem;
   min-width: 5.5rem;
+}
+
+.certification {
+  position: absolute;
+  left: 6.5rem;
+  top: 0.25rem;
+  height: 1.6rem;
+  width: 1.6rem;
 }
