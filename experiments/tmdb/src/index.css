@@ -1,5 +1,6 @@
 :root {
   --bg: #fafafa;
+  --border: rgb(235, 235, 235);
   --primary: #16191c;
   --secondary: rgba(0, 0, 0, 0.6);
   --tertiary: rgba(0, 0, 0, 0.4);
@@ -28,6 +29,13 @@ body {
 header {
   padding-bottom: 1.3rem;
   padding-top: 2.8rem;
+}
+
+footer {
+  border-top: 0.2rem solid var(--border);
+  margin: 0 auto;
+  max-width: 122rem;
+  width: 90%;
 }
 
 h1,
