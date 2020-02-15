@@ -1,88 +1,63 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import useSwr from 'swr';
 
+import CrewCastGenre from './CrewCastGenre';
 import ReleaseDate from './ReleaseDate';
+import Runtime from './Runtime';
 
 import { MovieContext } from './MovieContext';
 
 import css from './css/Info.module.css';
 
 export default function Info() {
-  const { movie, movieId } = useContext(MovieContext);
-  const castEl = useRef(null);
+  const [releaseDate, setReleaseDate] = useState('');
+  const [certification, setCertfication] = useState('');
 
-  const { data: credits } = useSwr(
-    `https://api.themoviedb.org/3/movie/${movieId}/credits`,
+  const { movieId } = useContext(MovieContext);
+  const imgSrc = require(`../../lib/RATED_${certification}.svg`);
+
+  const { data: releases } = useSwr(
+    `https://api.themoviedb.org/3/movie/${movieId}/release_dates`,
     {
       suspense: true
     }
   );
 
-  function checkClientHeight() {
-    if (castEl.current !== null && castEl.current.clientHeight > 24) {
-      return true;
+  useEffect(() => {
+    function findRelease() {
+      const { release_dates } = releases.results.find(
+        date => date.iso_3166_1 === 'US'
+      );
+      const official_release = release_dates.find(date =>
+        ['', 'North American release', 'New York and Los Angeles'].includes(
+          date.note
+        )
+      );
+
+      setReleaseDate(official_release.release_date);
+      setCertfication(official_release.certification);
     }
 
-    return false;
-  }
-
-  function getDirector(crew) {
-    const director = crew.find(member => member.department === 'Directing');
-
-    return director.name;
-  }
-
-  function generateString(A) {
-    const result = [];
-    const len = A.length < 3 ? A.length : 3;
-
-    for (let i = 0; i < len; i++) {
-      result.push(A[i].name);
-    }
-
-    return result.join(', ');
-  }
-
-  function runtimeConversion(t) {
-    const hours = Math.floor(t / 60);
-    const minutes = t % 60;
-
-    if (hours !== 0) {
-      return `${hours} hr ${minutes} min`;
-    } else {
-      return `${minutes} min`;
-    }
-  }
+    findRelease();
+  }, [releases.results]);
 
   return (
     <ul className={css.list}>
-      {credits.crew.length > 0 && (
-        <li className={css.info}>
-          <span className={css.credits}>Director</span>
-          {getDirector(credits.crew)}
-        </li>
-      )}
-      {credits.cast.length > 0 && (
-        <li className={css.info} ref={castEl}>
-          <span className={css.credits}>Starring</span>
-          <span style={checkClientHeight() ? { lineHeight: `2rem` } : null}>
-            {generateString(credits.cast)}
-          </span>
-        </li>
-      )}
-      {movie.genres.length > 0 && (
-        <li className={css.info}>
-          <span className={css.credits}>Genre</span>
-          {generateString(movie.genres)}
-        </li>
-      )}
-      <ReleaseDate />
-      {movie.runtime !== 0 ? (
-        <li className={css.info}>
-          <span className={css.credits}>Runtime</span>
-          {runtimeConversion(movie.runtime)}
-        </li>
-      ) : null}
+      <CrewCastGenre />
+      <li className={css.info}>
+        <span className={css.credits}>Rated</span>
+        {certification.length > 0 ? (
+          <img
+            className={css.certification}
+            src={imgSrc}
+            alt={`${certification} rating`}
+          />
+        ) : (
+          'Not Rated'
+        )}
+      </li>
+      <ReleaseDate releaseDate={releaseDate} />
+      <Runtime />
     </ul>
   );
 }
