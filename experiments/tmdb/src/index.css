@@ -34,7 +34,7 @@ header {
 footer {
   border-top: 0.2rem solid var(--border);
   margin: 0 auto;
-  max-width: 122rem;
+  max-width: 104rem;
   width: 90%;
 }
 
@@ -64,7 +64,7 @@ h2 {
 }
 
 h3 {
-  font-size: calc(1.6rem + (24 - 16) * ((100vw - 30rem) / (1600 - 300)));
+  font-size: calc(1.6rem + (20 - 16) * ((100vw - 30rem) / (1600 - 300)));
   font-style: italic;
   padding-bottom: 1.5rem;
 }
