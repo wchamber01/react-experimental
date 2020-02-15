@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { Home, Movie } from './pages';
 import { Spinner } from './components/Spinner';
+import { Footer } from './components/Footer';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Route exact path="/" element={<Home />} />
         <Route path=":movieId/*" element={<Movie />} />
       </Routes>
+      <Footer />
     </Suspense>
   );
 }
