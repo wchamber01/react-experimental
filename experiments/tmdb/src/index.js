@@ -29,7 +29,7 @@ root.render(
         fetcher: fetch
       }}
     >
-      <Router>
+      <Router timeout={1000}>
         <App />
       </Router>
     </SWRConfig>
