@@ -18,7 +18,7 @@ import * as serviceWorker from './lib/serviceWorker';
 
 import './index.css';
 
-// Enable concurrent mode with ReactDOM.createRoot
+// Opt-in concurrent mode with ReactDOM.createRoot
 const rootEl = document.getElementById('app');
 const root = ReactDOM.createRoot(rootEl);
 
