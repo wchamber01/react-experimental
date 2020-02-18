@@ -9,5 +9,5 @@ export default async function(url) {
     }
   });
 
-  return await res.json();
+  return res.json();
 }
