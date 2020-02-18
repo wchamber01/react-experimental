@@ -1,3 +1,13 @@
+/**
+ * See documentation on the next major version of React Router, version 6.
+ *
+ * Getting started guide:
+ * https://github.com/ReactTraining/react-router/blob/dev/docs/installation/getting-started.md
+ *
+ * v5 to v6 migration guide:
+ * https://github.com/ReactTraining/react-router/blob/dev/docs/advanced-guides/migrating-5-to-6.md
+ */
+
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
