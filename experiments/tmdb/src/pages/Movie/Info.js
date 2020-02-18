@@ -29,9 +29,7 @@ export default function Info() {
         date => date.iso_3166_1 === 'US'
       );
       const official_release = release_dates.find(date =>
-        ['', 'North American release', 'New York and Los Angeles'].includes(
-          date.note
-        )
+        [3, 2, 1].includes(date.type)
       );
 
       setReleaseDate(official_release.release_date);
@@ -44,18 +42,16 @@ export default function Info() {
   return (
     <ul className={css.list}>
       <CrewCastGenre />
-      <li className={css.info}>
-        <span className={css.credits}>Rated</span>
-        {certification.length > 0 ? (
+      {certification.length > 0 ? (
+        <li className={css.info}>
+          <span className={css.credits}>Rated</span>
           <img
             className={css.certification}
             src={imgSrc}
             alt={`${certification} rating`}
           />
-        ) : (
-          'Not Rated'
-        )}
-      </li>
+        </li>
+      ) : null}
       <ReleaseDate releaseDate={releaseDate} />
       <Runtime />
     </ul>
