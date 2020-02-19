@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.list {
+.unordered_list {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -11,7 +11,7 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.list::-webkit-scrollbar {
+.unordered_list::-webkit-scrollbar {
   display: none;
 }
 

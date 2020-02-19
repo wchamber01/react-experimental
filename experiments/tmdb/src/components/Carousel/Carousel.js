@@ -1,30 +1,67 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import left from '../../lib/arrow-left-bold.svg';
 import right from '../../lib/arrow-right-bold.svg';
 
 import css from './Carousel.module.css';
 
+///////////////////////////////////////////////////////////////////////////////
+// CAROUSEL
+// --------
+// This is a simple, clean React carousel component which uses React hooks and
+// native Web APIs to achieve native fluidity for horizontal scrolling on
+// touchscreen devices. The Button component is visible to assist when
+// scrolling on devices that lack touchscreen capabilities.
+// --------
+// Inspiration: Airbnb & Google
+///////////////////////////////////////////////////////////////////////////////
+
+export default function Carousel(props) {
+  const [xAxis, setXAxis] = useState(0);
+  const unorderedListEl = useRef(null);
+
+  return (
+    <div className={css.container}>
+      <Button
+        direction="L"
+        unOrderedListRef={unorderedListEl}
+        xAxis={xAxis}
+        setXAxis={setXAxis}
+        top={props.top}
+      />
+      <ul ref={unorderedListEl} className={css.unordered_list}>
+        {props.children}
+      </ul>
+      <Button
+        direction="R"
+        unOrderedListRef={unorderedListEl}
+        xAxis={xAxis}
+        setXAxis={setXAxis}
+        top={props.top}
+      />
+    </div>
+  );
+}
+
 function Button(props) {
   const [show, setShow] = useState(false);
-  const buttonEl = useRef(null);
+  const buttonEl = useRef(false);
 
   const L_Boolean = props.direction === 'L';
-  const R_Boolean = props.direction === 'R';
 
   useEffect(() => {
-    function displayButtons() {
+    function showButtons() {
       if (L_Boolean) {
-        if (props.X > 0) {
+        if (props.xAxis > 0) {
           setShow(true);
         } else {
           setShow(false);
         }
-      } else if (R_Boolean) {
-        const sW = props.listRef.current.scrollWidth;
-        const cW = props.listRef.current.clientWidth;
+      } else {
+        const sW = props.unOrderedListRef.current.scrollWidth;
+        const cW = props.unOrderedListRef.current.clientWidth;
 
-        if (props.X < sW - cW) {
+        if (props.xAxis < sW - cW) {
           setShow(true);
         } else {
           setShow(false);
@@ -32,30 +69,33 @@ function Button(props) {
       }
     }
 
-    // if device does not has a touch screen
+    // if device has a touch screen
     if (!window.matchMedia('(pointer: coarse)').matches) {
-      displayButtons();
+      showButtons();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.X]);
+  }, [props.xAxis]);
 
   function scroll() {
-    const sW = props.listRef.current.scrollWidth;
-    const cW = props.listRef.current.clientWidth;
-    const chW = sW / props.listRef.current.childElementCount;
+    const sW = props.unOrderedListRef.current.scrollWidth;
+    const cW = props.unOrderedListRef.current.clientWidth;
+    const chW = sW / props.unOrderedListRef.current.childElementCount;
     const direction = L_Boolean ? -1 : 1;
     const sX = Math.ceil(cW / 2 / chW) * chW * direction;
-    const nX = props.X + sX;
+    const nX = props.xAxis + sX;
 
-    props.listRef.current.scrollTo({
+    props.unOrderedListRef.current.scrollTo({
       top: 0,
       left: nX,
       behavior: 'smooth'
     });
 
-    props.setX(nX);
+    props.setXAxis(nX);
   }
 
+  /**
+   * On pointer release, remove keyboard focus from the button element.
+   */
   function blur() {
     buttonEl.current.blur();
   }
@@ -78,32 +118,5 @@ function Button(props) {
         />
       </button>
     )
-  );
-}
-
-export default function Carousel(props) {
-  const [X, setX] = useState(0);
-  const listEl = useRef(null);
-
-  return (
-    <div className={css.container}>
-      <Button
-        direction="L"
-        listRef={listEl}
-        X={X}
-        setX={setX}
-        top={props.top}
-      />
-      <ul ref={listEl} className={css.list}>
-        {props.children}
-      </ul>
-      <Button
-        direction="R"
-        listRef={listEl}
-        X={X}
-        setX={setX}
-        top={props.top}
-      />
-    </div>
   );
 }
