@@ -33,7 +33,7 @@ header {
 
 footer {
   border-top: 0.2rem solid var(--border);
-  margin: 0 auto;
+  margin: 5rem auto 0;
   max-width: 104rem;
   width: 90%;
 }
@@ -53,7 +53,7 @@ li {
 }
 
 h1 {
-  font-size: calc(2rem + (36 - 20) * ((100vw - 30rem) / (1600 - 300)));
+  font-size: calc(2rem + (32 - 20) * ((100vw - 30rem) / (1600 - 300)));
   font-style: italic;
 }
 
