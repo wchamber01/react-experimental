@@ -10,8 +10,8 @@ import css from './Carousel.module.css';
 // --------
 // This is a simple, clean React carousel component which uses React hooks and
 // native Web APIs to achieve native fluidity for horizontal scrolling on
-// touchscreen devices. The Button component is visible to assist when
-// scrolling on devices that lack touchscreen capabilities.
+// touchscreen devices. The Button component is visible to use when scrolling
+// on devices that lack touchscreen capabilities.
 // --------
 // Inspiration: Airbnb & Google
 ///////////////////////////////////////////////////////////////////////////////
@@ -45,7 +45,7 @@ export default function Carousel(props) {
 
 function Button(props) {
   const [show, setShow] = useState(false);
-  const buttonEl = useRef(false);
+  const buttonEl = useRef(null);
 
   const L_Boolean = props.direction === 'L';
 
