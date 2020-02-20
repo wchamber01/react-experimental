@@ -1,12 +1,12 @@
 .container {
   position: relative;
-  margin-bottom: 2rem;
 }
 
 .unordered_list {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  padding-bottom: 2rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
