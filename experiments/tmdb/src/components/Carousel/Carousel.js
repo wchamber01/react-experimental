@@ -108,7 +108,7 @@ function Button(props) {
     // in the client width; e.g., if 6 movie posters are present in the
     // client width, then each onClick will scroll a length of 3 movie posters
     const scrollXAxis = Math.ceil(cW / 2 / chW) * chW * scrollDirection;
-    // current xAxis position +/- calculated scroll length
+    // current xAxis position +/- calculated scroll distance
     const nextXAxis = xAxis + scrollXAxis;
 
     /**
@@ -126,6 +126,8 @@ function Button(props) {
 
   /**
    * On pointer release, remove keyboard focus from the button element.
+   *
+   * TODO: Currently does not work on Firefox / Safari.
    */
   function blur() {
     buttonEl.current.blur();
