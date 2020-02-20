@@ -25,6 +25,9 @@ const animation = [
   { id: 12, rotate: 'rotate(150deg)', duration: '-83.3333ms' }
 ];
 
+/**
+ * An iOS Spinner React component.
+ */
 export default function Spinner() {
   return (
     <div className={css.container}>
