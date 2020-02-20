@@ -26,6 +26,7 @@ Carousel.propTypes = {
 };
 
 export default function Carousel(props) {
+  // To keep track of or set the Carousel's current scroll position
   const [xAxis, setXAxis] = useState(0);
   const unorderedListEl = useRef(null);
 
