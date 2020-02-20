@@ -22,19 +22,15 @@ export default function NowPlaying() {
   );
 
   return (
-    <>
-      <h2>Now Playing</h2>
-      <div className="description">Movies now playing in theaters.</div>
-      <Carousel top={99.5}>
-        {data.results.map(movie => (
-          <Poster
-            key={movie.id}
-            movieId={movie.id}
-            title={movie.title}
-            posterPath={movie.poster_path}
-          />
-        ))}
-      </Carousel>
-    </>
+    <Carousel top={99.5}>
+      {data.results.map(movie => (
+        <Poster
+          key={movie.id}
+          movieId={movie.id}
+          title={movie.title}
+          posterPath={movie.poster_path}
+        />
+      ))}
+    </Carousel>
   );
 }
