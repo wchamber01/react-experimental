@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import PropTypes from 'prop-types';
 
 import left from '../../lib/arrow-left-bold.svg';
 import right from '../../lib/arrow-right-bold.svg';
@@ -16,14 +15,6 @@ import css from './Carousel.module.css';
 // --------
 // Inspiration: Airbnb & Google
 ///////////////////////////////////////////////////////////////////////////////
-
-/**
- * This prop is used to set the buttons' top CSS property — the vertical
- * position of a positioned element.
- */
-Carousel.propTypes = {
-  top: PropTypes.number
-};
 
 export default function Carousel(props) {
   const [xAxis, setXAxis] = useState(0);
