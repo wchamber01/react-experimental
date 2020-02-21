@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 2.2rem;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.poster {
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  height: 23.1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 15.6rem;
+}

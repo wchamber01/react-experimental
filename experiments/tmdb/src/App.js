@@ -16,6 +16,8 @@ import { Spinner } from './components/Spinner';
 import { Footer } from './components/Footer';
 
 export default function App() {
+  // TODO: Refactor the single Suspense fallback into multiple to support skeleton fallbacks
+
   return (
     <Suspense fallback={<Spinner />}>
       <Routes>
