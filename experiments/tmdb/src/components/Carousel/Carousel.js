@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import left from '../../lib/arrow-left-bold.svg';
-import right from '../../lib/arrow-right-bold.svg';
+import leftArrow from '../../lib/arrow-left-bold.svg';
+import rightArrow from '../../lib/arrow-right-bold.svg';
 
 // The properties inside the .unordered_list class is crucial for
 // achieving the native, fluid scroll behavior.
@@ -20,11 +20,12 @@ import css from './Carousel.module.css';
 ///////////////////////////////////////////////////////////////////////////////
 
 /**
- * This prop is used to set the buttons' top CSS property
- * — the vertical position of a positioned element.
+ * These props are used to set the buttons' CSS position properties.
  */
 Carousel.propTypes = {
-  top: PropTypes.number
+  top: PropTypes.number,
+  left: PropTypes.number,
+  right: PropTypes.number
 };
 
 export default function Carousel(props) {
@@ -40,6 +41,8 @@ export default function Carousel(props) {
         xAxis={xAxis}
         setXAxis={setXAxis}
         top={props.top}
+        left={props.left}
+        right={props.right}
       />
       <ul ref={unorderedListEl} className={css.unordered_list}>
         {props.children}
@@ -50,6 +53,8 @@ export default function Carousel(props) {
         xAxis={xAxis}
         setXAxis={setXAxis}
         top={props.top}
+        left={props.left}
+        right={props.right}
       />
     </div>
   );
@@ -59,7 +64,7 @@ function Button(props) {
   const [show, setShow] = useState(false);
   const buttonEl = useRef(null);
 
-  const { unOrderedListRef, xAxis } = props;
+  const { unOrderedListRef, xAxis, top, left, right } = props;
   const L_Boolean = props.orientation === 'L';
 
   useEffect(() => {
@@ -141,12 +146,12 @@ function Button(props) {
         onClick={scroll}
         onPointerUp={blur}
         style={{
-          ...(L_Boolean ? { left: '-1.6rem' } : { right: '-1.6rem' }),
-          ...{ top: `${props.top}px` }
+          ...(L_Boolean ? { left: `-${left}px` } : { right: `-${right}px` }),
+          ...{ top: `${top}px` }
         }}
       >
         <img
-          src={L_Boolean ? left : right}
+          src={L_Boolean ? leftArrow : rightArrow}
           alt={`${L_Boolean ? 'left' : 'right'} carousel scroll button`}
         />
       </button>

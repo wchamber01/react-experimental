@@ -13,7 +13,7 @@ export default function Upcoming() {
   );
 
   return (
-    <Carousel top={99.5}>
+    <Carousel top={99.5} left={6} right={16}>
       {data.results.map(movie => (
         <Poster
           key={movie.id}
