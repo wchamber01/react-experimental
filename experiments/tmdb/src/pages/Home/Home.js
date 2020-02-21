@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
+import PostersPlaceholder from './PostersPlaceholder';
 import NowPlaying from './NowPlaying';
 import Upcoming from './Upcoming';
 
@@ -12,10 +13,14 @@ export default function Home() {
       <main className={css.container}>
         <h2>Now Playing</h2>
         <div className="description">Movies now playing in theaters.</div>
-        <NowPlaying />
+        <Suspense fallback={<PostersPlaceholder />}>
+          <NowPlaying />
+        </Suspense>
         <h2>Upcoming</h2>
         <div className="description">Movies coming soon to theaters.</div>
-        <Upcoming />
+        <Suspense fallback={<PostersPlaceholder />}>
+          <Upcoming />
+        </Suspense>
       </main>
     </>
   );
