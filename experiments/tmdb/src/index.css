@@ -59,14 +59,14 @@ h1 {
 
 h2 {
   font-size: calc(2.4rem + (28 - 20) * ((100vw - 30rem) / (1600 - 300)));
-  padding-bottom: 0.25rem;
-  padding-top: 1rem;
+  padding: 1rem 0rem 0.25rem 1rem;
 }
 
 h3 {
   font-size: calc(1.6rem + (20 - 16) * ((100vw - 30rem) / (1600 - 300)));
   font-style: italic;
   padding-bottom: 1.5rem;
+  padding-left: 1rem;
 }
 
 p {
@@ -88,4 +88,5 @@ button {
   font-size: calc(1.3rem + (16 - 13) * ((100vw - 30rem) / (1600 - 300)));
   font-weight: 500;
   padding-bottom: 2.75rem;
+  padding-left: 1rem;
 }

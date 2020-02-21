@@ -1,12 +1,3 @@
-/**
- * Upon investigating the waterfall, I believe this is not the render-as-you-fetch approach!
- *
- * We are also making another two passes to the API, hence the "waterfall effect":
- *
- * 1. Fetch Now Playing movies from API
- * 2. Fetch poster images from the data we recieved from step 1
- */
-
 import React from 'react';
 import useSwr from 'swr';
 
@@ -22,19 +13,15 @@ export default function NowPlaying() {
   );
 
   return (
-    <>
-      <h2>Now Playing</h2>
-      <div className="description">Movies now playing in theaters.</div>
-      <Carousel top={99.5}>
-        {data.results.map(movie => (
-          <Poster
-            key={movie.id}
-            movieId={movie.id}
-            title={movie.title}
-            posterPath={movie.poster_path}
-          />
-        ))}
-      </Carousel>
-    </>
+    <Carousel top={99.5} left={6} right={16}>
+      {data.results.map(movie => (
+        <Poster
+          key={movie.id}
+          movieId={movie.id}
+          title={movie.title}
+          posterPath={movie.poster_path}
+        />
+      ))}
+    </Carousel>
   );
 }

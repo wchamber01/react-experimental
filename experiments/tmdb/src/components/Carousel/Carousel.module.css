@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  padding-bottom: 2rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;

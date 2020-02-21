@@ -26,7 +26,7 @@ export default function Videos() {
     return (
       <section className={css.videos}>
         <h3>Videos</h3>
-        <Carousel top={48.25}>
+        <Carousel top={48.25} left={6} right={16}>
           {videos.results.map(result => (
             <li key={result.id}>
               <a

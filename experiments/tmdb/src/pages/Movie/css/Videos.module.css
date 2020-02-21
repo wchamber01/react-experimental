@@ -1,7 +1,7 @@
 .videos {
   margin: 0 auto;
-  max-width: 64rem;
-  padding: 0.25rem 1.5rem 2rem;
+  max-width: 66rem;
+  padding: 0.25rem 0.5rem 2rem;
 }
 
 .thumbnail {
@@ -12,8 +12,7 @@
   box-shadow: var(--shadow);
   cursor: pointer;
   height: 12.85rem;
-  margin-bottom: 0.5rem;
-  margin-right: 2rem;
+  margin: 0rem 1rem 0.5rem 1rem;
   width: 23.1rem;
 }
 

@@ -13,20 +13,16 @@ export default function Upcoming() {
   );
 
   return (
-    <>
-      <h2>Upcoming</h2>
-      <div className="description">Movies coming soon to theaters.</div>
-      <Carousel top={99.5}>
-        {data.results.map(movie => (
-          <Poster
-            key={movie.id}
-            movieId={movie.id}
-            title={movie.title}
-            posterPath={movie.poster_path}
-            releaseYear={movie.release_date.slice(0, 4)}
-          />
-        ))}
-      </Carousel>
-    </>
+    <Carousel top={99.5} left={6} right={16}>
+      {data.results.map(movie => (
+        <Poster
+          key={movie.id}
+          movieId={movie.id}
+          title={movie.title}
+          posterPath={movie.poster_path}
+          releaseYear={movie.release_date.slice(0, 4)}
+        />
+      ))}
+    </Carousel>
   );
 }
